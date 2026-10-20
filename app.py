@@ -15,19 +15,19 @@ count = st.slider("몇 세트를 뽑을까요?", 1, 10, 1)
 
 def draw_one_set():
     main_numbers = sorted(random.sample(range(1, 46), 6))
-remaining = [n for n in range(1, 46) if n not in main_numbers]
-bonus = random.choice(remaining)
-return main_numbers, bonus
+    remaining = [n for n in range(1, 46) if n not in main_numbers]
+    bonus = random.choice(remaining)
+    return main_numbers, bonus
 
 
 if st.button("🎲 로또 번호 뽑기"):
-for i in range(1, count + 1):
-main, bonus = draw_one_set()
-st.success(f"세트 {i} ➜ 🎯 메인: {', '.join(map(str, main))}")
-st.info(f"세트 {i} ➜ 💎 보너스: {bonus}")
-st.balloons()
+    for i in range(1, count + 1):
+        main, bonus = draw_one_set()
+        st.success(f"세트 {i} ➜ 🎯 메인: {', '.join(map(str, main))}")
+        st.info(f"세트 {i} ➜ 💎 보너스: {bonus}")
+    st.balloons()
 else:
-st.caption("⬆️ 세트 개수를 정하고 버튼을 눌러보세요!")
+    st.caption("⬆️ 세트 개수를 정하고 버튼을 눌러보세요!")
 
 
 st.markdown("---")
