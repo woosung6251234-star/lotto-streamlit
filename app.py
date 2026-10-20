@@ -14,7 +14,7 @@ count = st.slider("몇 세트를 뽑을까요?", 1, 10, 1)
 
 
 def draw_one_set():
-main_numbers = sorted(random.sample(range(1, 46), 6))
+    main_numbers = sorted(random.sample(range(1, 46), 6))
 remaining = [n for n in range(1, 46) if n not in main_numbers]
 bonus = random.choice(remaining)
 return main_numbers, bonus
